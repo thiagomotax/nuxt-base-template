@@ -4,6 +4,9 @@
     <Nuxt /> <!--Renderização da página-->
     <Footer :name="name">
       <span> Sloted content</span>
+      <template v-slot:test>
+        Named slot
+      </template>
     </Footer>
   </v-app>
 </template>

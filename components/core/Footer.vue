@@ -2,6 +2,7 @@
   <v-footer app>
     <span>All Rights Reserved {{ name }} {{ date }}</span>
     <slot />
+    <slot name="test" />
   </v-footer>
 </template>
 
