@@ -1,8 +1,10 @@
 <template>
   <v-app dark>
-    <Header :name="name" />
+    <Header :name="name" @doThing="updateSomething()" />
     <Nuxt /> <!--Renderização da página-->
-    <Footer :name="name" />
+    <Footer :name="name">
+      <span> Sloted content</span>
+    </Footer>
   </v-app>
 </template>
 
@@ -16,6 +18,11 @@ export default {
   },
   data: () => ({
     name: 'Generic Site'
-  })
+  }),
+  methods: {
+    updateSomething () {
+      console.log('emmit works')
+    }
+  }
 }
 </script>

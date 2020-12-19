@@ -46,6 +46,10 @@ export default {
   data: () => ({
     drawer: false,
     group: null
-  })
+  }),
+  created () {
+    const vm = this
+    vm.$emit('doThing')
+  }
 }
 </script>

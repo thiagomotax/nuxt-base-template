@@ -1,6 +1,7 @@
 <template>
   <v-footer app>
     <span>All Rights Reserved {{ name }} {{ date }}</span>
+    <slot />
   </v-footer>
 </template>
 
