@@ -35,8 +35,13 @@ export default {
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: [
-  ],
+  modules: ['@nuxtjs/axios'],
+
+  axios: {
+    // baseURL: 'https://api.github.com',
+    proxyHeaders: false,
+    credentials: false
+  },
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {
