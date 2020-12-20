@@ -37,14 +37,20 @@ export default {
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: ['@nuxtjs/axios'],
+  modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy'
+  ],
+  proxy: {
+    '/api': {
+      target: 'https://api.imgbb.com/1/upload',
+      pathRewrite: { '^/api/': '' }
 
-  axios: {
-    // baseURL: 'https://api.github.com',
-    proxyHeaders: false,
-    credentials: false
+    }
   },
-
+  axios: {
+    proxy: true
+  },
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
