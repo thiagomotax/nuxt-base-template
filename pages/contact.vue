@@ -32,7 +32,11 @@ export default {
       const image = new FormData()
       image.append('image', this.selectedFile)
       const response = await this.$axios.$post('/api?key=810df06b0e99728c490dc897607f39ca',
-        image
+        image, {
+          onUploadProgress: (uploadEvent) => {
+            console.log('Upload progress ' + Math.round(uploadEvent.loaded / uploadEvent.total * 100))
+          }
+        }
       )
       console.log(response)
     }
